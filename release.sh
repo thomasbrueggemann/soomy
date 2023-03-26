@@ -1,0 +1,1 @@
+trunk build --release --public-url soomy --dist docs
