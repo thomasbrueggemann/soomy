@@ -5,17 +5,26 @@ pub struct Image {
 }
 
 pub struct Thumbnail {
-    category: String,
-    image_url: String,
+    pub category: String,
+    pub image_url: String,
 }
 
 fn get_images() -> HashMap<String, Image> {
-    HashMap::from([(
-        "locomotive".to_string(),
-        Image {
-            url: "https://images.pexels.com/photos/2668755/pexels-photo-2668755.jpeg".to_string(),
-        },
-    )])
+    HashMap::from([
+        (
+            "locomotive".to_string(),
+            Image {
+                url: "https://images.pexels.com/photos/2668755/pexels-photo-2668755.jpeg"
+                    .to_string(),
+            },
+        ),
+        (
+            "airplane".to_string(),
+            Image {
+                url: "https://images.pexels.com/photos/358220/pexels-photo-358220.jpeg".to_string(),
+            },
+        ),
+    ])
 }
 
 pub fn get_image_url(image: String) -> String {
@@ -28,9 +37,16 @@ pub fn get_image_url(image: String) -> String {
     }
 }
 
-pub fn get_all_image_urls() -> Vec<String> {
-    for (key, value) in map.into_iter() {
-        println!("{} / {}", key, value);
-        map.remove(key);
-    }
+pub fn get_all_image_urls() -> Vec<Thumbnail> {
+    let images = get_images();
+
+    let thumbnails: Vec<Thumbnail> = images
+        .iter()
+        .map(|(k, v)| Thumbnail {
+            category: k.to_string(),
+            image_url: v.url.to_owned(),
+        })
+        .collect();
+
+    thumbnails
 }
