@@ -4,6 +4,6 @@ use yew_router::prelude::*;
 pub enum Route {
     #[at("/")]
     Overview,
-    #[at("/detail")]
-    Detail,
+    #[at("/detail/:image")]
+    Detail { image: String },
 }

@@ -4,13 +4,14 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 
 mod components;
+mod images;
 mod route;
 
 fn routes(routes: Route) -> Html {
     match routes {
         Route::Overview => html! { <Overview /> },
-        Route::Detail => html! {
-            <Detail />
+        Route::Detail { image } => html! {
+            <Detail image={image} />
         },
     }
 }
@@ -19,7 +20,7 @@ fn routes(routes: Route) -> Html {
 fn app() -> Html {
     html! {
         <BrowserRouter>
-            <Switch<Route> render={routes} /> // <- must be child of <BrowserRouter>
+            <Switch<Route> render={routes} />
         </BrowserRouter>
     }
 }
