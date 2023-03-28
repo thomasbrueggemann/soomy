@@ -10,9 +10,10 @@ pub struct Props {
 #[function_component]
 pub fn Detail(props: &Props) -> Html {
     html! {
-    <>
-        {"Detail "}
-        {&props.image}
-        <img src={get_image_url(props.image.to_owned())} />
-    </> }
+        <div class="is-flex is-align-items-center is-justify-content-center" style="height:100%">
+            <div class="is-flex is-align-items-center">
+                <img src={get_image_url(props.image.to_owned())} />
+            </div>
+        </div>
+    }
 }
