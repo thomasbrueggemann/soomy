@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       .home-nav {
         position: absolute;
@@ -15,9 +15,24 @@
         top: 10px;
       }
     </style>
+
+    
+    
+    
+    <link rel="manifest" href="./manifest.json">
+
+    <script>
+      window.onload = () => {
+        "use strict";
+
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("./service_worker.js");
+        }
+      };
+    </script>
   
 <link rel="preload" href="/soomy/soomy-fe1943d310f3441d_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
 <link rel="modulepreload" href="/soomy/soomy-fe1943d310f3441d.js"></head>
-  <body style="height: 100%">
+  <body style="height: 100%" oncontextmenu="return false;">
 
 <script type="module">import init from '/soomy/soomy-fe1943d310f3441d.js';init('/soomy/soomy-fe1943d310f3441d_bg.wasm');</script></body></html>

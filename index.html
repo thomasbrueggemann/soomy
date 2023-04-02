@@ -15,9 +15,6 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <style>
       .home-nav {
@@ -26,6 +23,21 @@
         top: 10px;
       }
     </style>
+
+    <link data-trunk rel="copy-file" href="manifest.json" />
+    <link data-trunk rel="copy-file" href="icon-256.png" />
+    <link data-trunk rel="copy-file" href="service_worker.js" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <script>
+      window.onload = () => {
+        "use strict";
+
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("./service_worker.js");
+        }
+      };
+    </script>
   </head>
-  <body style="height: 100%"></body>
+  <body style="height: 100%" oncontextmenu="return false;"></body>
 </html>
