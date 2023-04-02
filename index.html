@@ -16,15 +16,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      src="https://cdn.jsdelivr.net/gh/cotton123236/zoomist@latest/dist/zoomist.min.css"
-    />
     <style>
       .home-nav {
         position: absolute;
         left: 10px;
         top: 10px;
+        z-index: 1;
       }
     </style>
 
@@ -32,10 +29,7 @@
     <link data-trunk rel="copy-file" href="icon-256.png" />
     <link rel="manifest" href="./manifest.json" />
 
-    <script src="https://cdn.jsdelivr.net/gh/cotton123236/zoomist@latest/dist/zoomist.min.js"></script>
-    <script>
-      new Zoomist("#my-zoomist");
-    </script>
+    <script src="https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js"></script>
   </head>
   <body style="height: 100%" oncontextmenu="return false;"></body>
 </html>
