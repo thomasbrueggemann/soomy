@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use crate::{images::get_image_url, route::Route};
+use crate::{images::get_image_url, route::Route, zoomist::Zoomist};
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
@@ -10,6 +10,10 @@ pub struct Props {
 
 #[function_component]
 pub fn Detail(props: &Props) -> Html {
+    use_effect(move || {
+        Zoomist::new("#photo");
+    });
+
     html! {
         <>
             <div class="home-nav">
@@ -21,11 +25,7 @@ pub fn Detail(props: &Props) -> Html {
                     </button>
                 </Link<Route>>
             </div>
-            <div class="is-flex is-align-items-center is-justify-content-center" style="height:100%">
-                <div class="is-flex is-align-items-center">
-                    <img src={get_image_url(props.image.to_owned())} />
-                </div>
-            </div>
+            <div id="photo" data-zoomist-src={get_image_url(props.image.to_owned())}></div>
         </>
     }
 }

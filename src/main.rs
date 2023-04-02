@@ -5,6 +5,7 @@ use yew_router::prelude::*;
 
 mod components;
 mod images;
+mod zoomist;
 mod route;
 
 fn routes(routes: Route) -> Html {
