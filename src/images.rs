@@ -24,6 +24,13 @@ fn get_images() -> HashMap<String, Image> {
                 url: "https://images.pexels.com/photos/358220/pexels-photo-358220.jpeg".to_string(),
             },
         ),
+        (
+            "excavator".to_string(),
+            Image {
+                url: "https://images.pexels.com/photos/6479995/pexels-photo-6479995.jpeg"
+                    .to_string(),
+            },
+        ),
     ])
 }
 
