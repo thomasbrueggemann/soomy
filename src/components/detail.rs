@@ -22,9 +22,9 @@ pub fn Detail(props: &Props) -> Html {
                     .cast::<HtmlElement>()
                     .expect("div_ref not attached to div element");
 
-                pan_zoom(div);
+                let zoomed = pan_zoom(div);
 
-                move || {}
+                move || zoomed.dispose()
             },
             div_ref,
         );

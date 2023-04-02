@@ -31,6 +31,18 @@ fn get_images() -> HashMap<String, Image> {
                     .to_string(),
             },
         ),
+		(
+			"spaceshuttle".to_string(),
+			Image {
+				url: "https://images.pexels.com/photos/73871/rocket-launch-rocket-take-off-nasa-73871.jpeg".to_string()
+			}
+		),
+		(
+			"fruitbasket".to_string(),
+			Image {
+				url: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg".to_string()
+			}
+		)
     ])
 }
 
@@ -47,7 +59,7 @@ pub fn get_image_url(image: String) -> String {
 pub fn get_all_image_urls() -> Vec<Thumbnail> {
     let images = get_images();
 
-    let thumbnails: Vec<Thumbnail> = images
+    let mut thumbnails: Vec<Thumbnail> = images
         .iter()
         .map(|(k, v)| Thumbnail {
             category: k.to_string(),
