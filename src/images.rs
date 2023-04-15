@@ -59,7 +59,7 @@ pub fn get_image_url(image: String) -> String {
 pub fn get_all_image_urls() -> Vec<Thumbnail> {
     let images = get_images();
 
-    let mut thumbnails: Vec<Thumbnail> = images
+    let thumbnails: Vec<Thumbnail> = images
         .iter()
         .map(|(k, v)| Thumbnail {
             category: k.to_string(),
